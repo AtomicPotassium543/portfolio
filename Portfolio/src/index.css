@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+body {
+  background: #000;
+  overflow-x: hidden;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-99%); }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
