@@ -1,6 +1,5 @@
-import type { number } from "framer-motion";
 import { useEffect, useState } from "react"
-
+import { FetchPortfolioPos } from "./Works"
 
 function Navbar() {
     const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -41,9 +40,18 @@ function Navbar() {
         }
     }, [ScrollNumber]);
 
+    const jumpToReleventDiv = (id: string) => {
+
+        window.scrollTo({
+            top: screen.height * 1.25, 
+            behavior: "smooth"
+        });
+
+    };
+
     return (
         <>
-            <div className={`w-full bg-${bgcolor} px-20 flex justify-between fixed top-0 z-50 transform transition-all duration-500 ease-in-out ${enlarge}`}>
+            <div className={`w-screen bg-${bgcolor} px-20 flex justify-between fixed top-0 z-50 transform transition-all duration-500 ease-in-out ${enlarge}`}>
                 <div className='px-5 py-6 float-left'>
                     <div className='hover:cursor-pointer'>
                         <img src={imgsrc}/>
@@ -51,13 +59,9 @@ function Navbar() {
                 </div>
                 <div className={`px-5 py-6 float-right flex flex-row gap-x-20 text-${textcolor} font-regular text-2xl`}>
                     <div className='hover:cursor-pointer mx-5 tracking-widest'>
-                        <p>Portfolio</p>
-                    </div>
-                    <div className='hover:cursor-pointer mx-5 tracking-widest'>
-                        <p>Reviews</p>
-                    </div>
-                    <div className='hover:cursor-pointer mx-5 tracking-widest'>
-                        <p>Contact me</p>
+                        <button onClick={() => jumpToReleventDiv('Portofolio')} className="cursor-pointer">
+                            <p>Portfolio</p>
+                        </button>
                     </div>
                 </div>
             </div>

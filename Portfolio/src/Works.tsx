@@ -1,9 +1,49 @@
 import { motion } from "framer-motion"
-import { useState } from "react"
+import { useState, useEffect, useActionState } from "react"
+
+function FetchPortfolioPos() {
+    const [portfolioPos, setPortfolioPos] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const pos = document.getElementById("Portofolio")?.offsetTop || 0;
+            setPortfolioPos(pos);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    console.log(portfolioPos);
+
+    return {portfolioPos};
+}
 
 function Works() {
 
     const works = [
+        {
+            "Title": "AutoPilot System",
+            "Description": "An autopilot system for my game. An autopilot system for my game. An autopilot system for my game. An autopilot system for my game. An autopilot system for my game. An autopilot system for my game.",
+            "Image": "https://placehold.co/600x300",
+            "Href": "www.google.com",
+            "Tags": ["React", "Tailwind", "CSS"]
+        },
+        {
+            "Title": "AutoPilot System",
+            "Description": "An autopilot system for my game. An autopilot system for my game. An autopilot system for my game. An autopilot system for my game.",
+            "Image": "https://placehold.co/600x300",
+            "Href": "www.google.com",
+            "Tags": ["React", "Tailwind", "CSS"]
+        },
+        {
+            "Title": "AutoPilot System",
+            "Description": "An autopilot system for my game.",
+            "Image": "https://placehold.co/600x300",
+            "Href": "www.google.com",
+            "Tags": ["React", "Tailwind", "CSS"]
+        },
         {
             "Title": "AutoPilot System",
             "Description": "An autopilot system for my game.",
@@ -34,11 +74,9 @@ function Works() {
         }
     ]
 
-    
-
     return (
         <>
-            <div className="w-screen h-screen flex flex-col justify-center items-center bg-black text-white">
+            <div className="w-screen h-full flex flex-col justify-center items-center bg-black text-white my-10 gap-10" id="Portofolio">
                 <motion.div>
                     <motion.p whileInView={{
                         y: [250, 0],
@@ -59,7 +97,7 @@ function Works() {
 
                 <motion.div className="w-3/4 mt-20 grid grid-cols-3 gap-10 opacity-0" whileInView={{
                         opacity: [0, 1],
-                        transition: { times: [0, 1], duration: 1, delay: 4, ease: "easeInOut" }
+                        transition: { times: [0, 1], duration: 1, delay: 3, ease: "easeInOut" }
                     }} viewport={{once: true}}>
                     {works.map((work) => (
                         <a href={work.Href} target="_blank">
@@ -79,10 +117,10 @@ function Works() {
                     ))}
                 </motion.div>
             </div>
-            
         </>
     )
 
 }
 
 export default Works
+export { FetchPortfolioPos }
