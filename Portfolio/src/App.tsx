@@ -1,7 +1,7 @@
 import Navbar from "./navbar.jsx"
 import First from "./First.tsx"
 import Second from "./Second.tsx"
-import Works from "./Works.tsx"
+import Works from "./Works.js"
 import Footer from "./Footer.tsx"
 
 import { useEffect } from "react"

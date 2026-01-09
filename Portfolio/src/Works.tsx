@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { useState, useEffect, useActionState } from "react"
+import { useState, useEffect } from "react"
 
 function FetchPortfolioPos() {
     const [portfolioPos, setPortfolioPos] = useState(0);
@@ -22,58 +22,36 @@ function FetchPortfolioPos() {
 
 function Works() {
 
-    const works = [
-        {
-            "Title": "AutoPilot System",
-            "Description": "An autopilot system for my game. An autopilot system for my game. An autopilot system for my game. An autopilot system for my game. An autopilot system for my game. An autopilot system for my game.",
-            "Image": "https://placehold.co/600x300",
-            "Href": "www.google.com",
-            "Tags": ["React", "Tailwind", "CSS"]
-        },
-        {
-            "Title": "AutoPilot System",
-            "Description": "An autopilot system for my game. An autopilot system for my game. An autopilot system for my game. An autopilot system for my game.",
-            "Image": "https://placehold.co/600x300",
-            "Href": "www.google.com",
-            "Tags": ["React", "Tailwind", "CSS"]
-        },
-        {
-            "Title": "AutoPilot System",
-            "Description": "An autopilot system for my game.",
-            "Image": "https://placehold.co/600x300",
-            "Href": "www.google.com",
-            "Tags": ["React", "Tailwind", "CSS"]
-        },
-        {
-            "Title": "AutoPilot System",
-            "Description": "An autopilot system for my game.",
-            "Image": "https://placehold.co/600x300",
-            "Href": "www.google.com",
-            "Tags": ["React", "Tailwind", "CSS"]
-        },
-        {
-            "Title": "AutoPilot System",
-            "Description": "An autopilot system for my game.",
-            "Image": "https://placehold.co/600x300",
-            "Href": "www.google.com",
-            "Tags": ["React", "Tailwind", "CSS"]
-        },
-        {
-            "Title": "AutoPilot System",
-            "Description": "An autopilot system for my game.",
-            "Image": "https://placehold.co/600x300",
-            "Href": "www.google.com",
-            "Tags": ["React", "Tailwind", "CSS"]
-        },
-        {
-            "Title": "AutoPilot System",
-            "Description": "An autopilot system for my game.",
-            "Image": "https://placehold.co/600x300",
-            "Href": "www.google.com",
-            "Tags": ["React", "Tailwind", "CSS"]
+    const [data, setData] = useState<{
+        record: {
+            Data: {
+                Title: string;
+                Description: string;
+                Image: string;
+                Href: string;
+                Tags?: string[];
+            }[];
+        };
+    } | null>(null);
+    
+    useEffect(() => {
+        async function fetchData() {
+            const res = await fetch('https://api.jsonbin.io/v3/b/695e9707ae596e708fcbc0bb', {
+                method: 'GET',
+                headers: {
+                    'Content-X-Master-Key': '$2a$10$nNNE2z/A9.DiNDV/dBXoeucuzSRImXSEQsw9jXrOYB8WOgwPsqdb.',
+                    'X-Access-Key': '$2a$10$UH3NfwUcvTPzZJN.UsYtPOVaYSBBkE91toFkf20KuWmmueynnrzrO'
+                }
+            });
+        
+            const json = await res.json();
+            setData(json);
         }
-    ]
-
+        fetchData();
+    }, []);
+    
+    const works = data?.record?.Data ?? [];
+    
     return (
         <>
             <div className="w-screen h-full flex flex-col justify-center items-center bg-black text-white my-10 gap-10" id="Portofolio">

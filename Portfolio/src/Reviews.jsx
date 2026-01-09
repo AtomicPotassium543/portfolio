@@ -1,22 +1,7 @@
 import { motion, useForceUpdate } from "framer-motion"
 import { useState, useEffect } from "react"
 
-function FetchPortfolioPos() {
-    const [portfolioPos, setPortfolioPos] = useState(0);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const pos = document.getElementById("Portofolio")?.offsetTop || 0;
-            setPortfolioPos(pos);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    return portfolioPos;
-}
 
 function Works() {
 
