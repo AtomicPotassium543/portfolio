@@ -1,5 +1,4 @@
-import { motion, useForceUpdate } from "framer-motion"
-import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 
 
 
