@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { FetchPortfolioPos } from "./Works"
 
 function Navbar() {
     const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -40,7 +39,7 @@ function Navbar() {
         }
     }, [ScrollNumber]);
 
-    const jumpToReleventDiv = (id: string) => {
+    const jumpToReleventDiv = () => {
 
         window.scrollTo({
             top: screen.height * 1.25, 
@@ -59,7 +58,7 @@ function Navbar() {
                 </div>
                 <div className={`px-5 py-6 float-right flex flex-row gap-x-20 text-${textcolor} font-regular text-2xl`}>
                     <div className='hover:cursor-pointer mx-5 tracking-widest'>
-                        <button onClick={() => jumpToReleventDiv('Portofolio')} className="cursor-pointer">
+                        <button onClick={() => jumpToReleventDiv()} className="cursor-pointer">
                             <p>Portfolio</p>
                         </button>
                     </div>

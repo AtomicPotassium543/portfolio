@@ -1,25 +1,6 @@
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 
-function FetchPortfolioPos() {
-    const [portfolioPos, setPortfolioPos] = useState(0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const pos = document.getElementById("Portofolio")?.offsetTop || 0;
-            setPortfolioPos(pos);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    console.log(portfolioPos);
-
-    return {portfolioPos};
-}
-
 function Works() {
 
     const [data, setData] = useState<{
@@ -61,7 +42,7 @@ function Works() {
                         fontSize: ["50px", "75px"],
                         transition: { times: [0, 1], duration: 1, delay: 1.5, ease: "easeInOut" }
                         
-                    }} viewport={{once: true}} className="text-center tracking-wider text-linear-to-b from-[#2A2A2A] from-[40%] via-[#2A2A2A] via-[60%] to-[#383838]">Portfolio</motion.p>
+                    }} viewport={{once: true}} className="text-center tracking-wider text-linear-to-b from-[#2A2A2A] from-40% via-[#2A2A2A] via-[60%] to-[#383838]">Portfolio</motion.p>
                     <motion.p 
                         whileInView={{
                             y: [250, 0],
@@ -101,4 +82,3 @@ function Works() {
 }
 
 export default Works
-export { FetchPortfolioPos }

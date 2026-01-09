@@ -14,8 +14,9 @@
     "@tailwindcss/vite": "^4.1.18",
     "aos": "^2.3.4",
     "motion": "^12.23.26",
-    "react": "^19.2.0",
+    "react": "^19.2.3",
     "react-dom": "^19.2.0",
+    "src": "^1.1.2",
     "supabase": "^2.71.0",
     "tailwindcss": "^4.1.18"
   },
