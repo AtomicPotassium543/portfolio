@@ -15,7 +15,7 @@ function Second() {
                     <a href="https://x.com/AtomicPota55215" className="cursor-pointer" target="_blank">
                         <p className="text-1xl text-black font-light flex flex-row gap-5"><span><img src="./X.png" className="w-8 h-8"/></span>X</p>
                     </a>
-                    <a href="https://www.fiverr.com/s/6YpNmGr" className="cursor-pointer" target="_blank">
+                    <a href="https://www.fiverr.com/ar_k41" className="cursor-pointer" target="_blank">
                         <p className="text-1xl text-black font-light flex flex-row gap-5"><span><img src="./Fiverr.png" className="w-8 h-8"/></span>Fiverr</p>
                     </a>
                 </div>
