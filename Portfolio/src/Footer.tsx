@@ -9,7 +9,7 @@ function Second() {
                     <p className="text-1xl text-black font-light tracking-wider">potassiumatomic@gmail.com</p>
                 </div>
                 <div className="w-1/3 h-1/2 px-5 py-6 flex flex-col space-y-4 mx-full my-auto gap-y-8">
-                    <a href="na" className="cursor-pointer" target="_blank">
+                    <a href="https://discord.gg/cUpBCmcC" className="cursor-pointer" target="_blank">
                         <p className="text-1xl text-black font-light flex flex-row gap-5"><span><img src="./Discord.png" className="w-8 h-8"/></span>Discord Server</p>
                     </a>
                     <a href="https://x.com/AtomicPota55215" className="cursor-pointer" target="_blank">
