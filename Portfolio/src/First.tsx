@@ -17,7 +17,7 @@ function First() {
                 <div className='flex items-center justify-center h-screen w-screen z-10'>
                     <div className="w-2/5 h-full flex items-center justify-center flex-col gap-y-5">
                         <p className="text-7xl text-white tracking-wider">AtomicPotassium</p>
-                        <p className="text-lg text-white text-light text-center tracking-wider">Chatbot Developer, UI/UX Designer, Fullstack Web Developer, Machine <br />Learning Engineer</p>
+                        <p className="text-lg text-white text-light text-center tracking-wider">Chatbot Developer, Game Developer, Machine Learning Engineer</p>
                     </div>
                 </div>
             </div>
